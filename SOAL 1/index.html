@@ -8,41 +8,45 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Soal 1 Bryan Adi</title>
   </head>
-  <body>
+  <body class="bg-warning" >
     <section class="container-fluid">
       <section class="row mt-3 pt-3 justify-content-center">
+        <div class="p-3 mb-2 bg-warning text-dark" style="text-align: center"><p class="h1">BRYAN ADI PRAKOSO</p></div>
         <section class="col-sm-6 col-md-4">
-          <div class="card">
-            <div class="card-header">Kalkulator Nilai Mahasiswa</div>
+            <br>
+             <div class="card bg-warning text-black">
+          <div class="card-header">
+            <div class="card-body">Kalkulator Nilai Mahasiswa</div>
+            <br>
             <div class="card-body">
               <form name="form" class="form-container">
                 <div class="form-floating mb-3 mt-3">
+                  <input type="text" class="form-control" id="nm" placeholder=" " name="" onkeypress="return validasiHuruf(event)" />
+                  <label for="ferrari">Input Nama :</label>
+                </div>
+                <div class="form-floating mb-3 mt-3">
                   <input type="text" class="form-control" id="NIM" placeholder=" " name="" maxlength="12" onkeypress="return validasiAngka(event)" />
-                  <label for="ferrari">Masukan Nim :</label>
+                  <label for="ferrari">Input Nim :</label>
                 </div>
                 <div class="form-floating mb-3 mt-3">
-                  <input type="text" class="form-control" id="nama" placeholder=" " name="" onkeypress="return validasiHuruf(event)" />
-                  <label for="ferrari">Masukan Nama :</label>
+                  <input type="text" class="form-control" id="tg" placeholder=" " name="" maxlength="3" onkeypress="return validasiAngka(event)" />
+                  <label for="ferrari">Input Nilai Tugas :</label>
                 </div>
                 <div class="form-floating mb-3 mt-3">
-                  <input type="text" class="form-control" id="tugas" placeholder=" " name="" maxlength="3" onkeypress="return validasiAngka(event)" />
-                  <label for="ferrari">Masukan Nilai Tugas :</label>
-                </div>
-                <div class="form-floating mb-3 mt-3">
-                  <input type="text" class="form-control" id="partisipasi" placeholder=" " name="" maxlength="3" onkeypress="return validasiAngka(event)" />
-                  <label for="ferrari">Masukan Nilai Partisipasi :</label>
+                  <input type="text" class="form-control" id="pts" placeholder=" " name="" maxlength="3" onkeypress="return validasiAngka(event)" />
+                  <label for="ferrari">Input Nilai Partisipasi :</label>
                 </div>
                 <div class="form-floating mb-3 mt-3">
                   <input type="text" class="form-control" id="uts" placeholder=" " name="" maxlength="3" onkeypress="return validasiAngka(event)" />
-                  <label for="ferrari">Masukan Nilai Uts :</label>
+                  <label for="ferrari">Input Nilai Uts :</label>
                 </div>
                 <div class="form-floating mb-3 mt-3">
                   <input type="text" class="form-control" id="uas" placeholder=" " name="" maxlength="3" onkeypress="return validasiAngka(event)" />
-                  <label for="ferrari">Masukan Nilai Uas :</label>
+                  <label for="ferrari">Input Nilai Uas :</label>
                 </div>
                 <div class="toast hide" id="demo">
                   <div class="toast-header">
-                    <strong class="me-auto">Nilai Akhir:</strong>
+                    <strong class="me-auto"> Output Nilai Akhir:</strong>
                     <button type="button" class="btn-close close" data-bs-dismiss="toast"></button>
                   </div>
                   <div class="toast-body">
@@ -51,7 +55,7 @@
                   </div>
                 </div>
                 <div class="mb-3 mt-3">
-                  <button type="button" class="btn btn-primary" id="kirim">Hitung</button>
+                  <button type="button" class="btn btn-success text-center" id="kirim">Hitung</button>
                 </div>
               </form>
             </div>
@@ -59,9 +63,7 @@
         </section>
       </section>
     </section>
-    <footer class="bg-dark text-white text-center pb-3 fixed-bottom">
-      <p><a href="" class="fw-bold text-white">Bryan Adi Prakoso</a></p>
-    </footer>
+    <footer class="bg-dark text-white text-center pb-3 fixed-bottom"></footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script>
@@ -88,20 +90,20 @@
 
       function kalkulasi() {
         let nim = document.getElementById('NIM').value;
-        let nama = document.getElementById('nama').value;
-        let tugas = document.getElementById('tugas').value;
-        let partisipasi = document.getElementById('partisipasi').value;
+        let nm = document.getElementById('nm').value;
+        let tg = document.getElementById('tg').value;
+        let pts = document.getElementById('pts').value;
         let uts = document.getElementById('uts').value;
         let uas = document.getElementById('uas').value;
         let huruf = '';
 
-        if (nim === '' || nama === '' || tugas == 0 || partisipasi == 0 || uts == 0 || uas == 0) {
+        if (nim === '' || nm === '' || tg == 0 || pts == 0 || uts == 0 || uas == 0) {
           alert('Mohon Isi Semua Form dan Tidak Ada Yang Kosong!');
         } else {
-          if (tugas > 100 || partisipasi > 100 || uts > 100 || uas > 100) {
+          if (tg > 100 || pts > 100 || uts > 100 || uas > 100) {
             alert('Mohon Maaf Nilai Angka Tidak Lebih Dari 100');
           } else {
-            let nilaiAngka = (Number(tugas) + Number(partisipasi) + Number(uts) + Number(uas)) / 4;
+            let nilaiAngka = (Number(tg) + Number(pts) + Number(uts) + Number(uas)) / 4;
             if (nilaiAngka <= 50) {
               huruf = 'C';
               kirim(huruf, nilaiAngka);

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Mari Belajar Coding - Wilayah Adminstrasi Indonesia</title>
+  <title>Soal 3 Bryan Adi</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -13,21 +13,22 @@
   <script src="asset/select2-4.0.6-rc.1/dist/js/i18n/id.js"></script>
   <script src="asset/js/app.js"></script>
   <?php
-  include("koneksi.php");
+  include("conect.php");
   ?>
 </head>
 
 <body>
   <div class="container">
+  <div class="p-3 mb-2 bg-warning text-dark" style="text-align: center"><p class="h1">BRYAN ADI PRAKOSO</p></div>
     <br>
     <div class="row mt-5 pt-5 justify-content-center">
       <div class="col-md-8 col-sm-8">
         <div class="card">
-          <div class="card-header"><b>ComboBox Bertingkat</b></div>
+          <div class="card-header bg-info text-dark"><b>Combo-Box</b></div>
           <div class="card-body">
             <form class="form-horizontal" method="post">
               <div class="input-group">
-                <label class="control-label col-sm-3">Provinsi:</label>
+                <label class="control-label col-sm-3 bg-info text-dark">Provinsi:</label>
                 <div class="col-sm-9">
                   <?php
                   $sql_provinsi = mysqli_query($con, "SELECT * FROM provinsi ORDER BY name ASC");
@@ -43,7 +44,7 @@
                 </div>
               </div>
               <div class="input-group">
-                <label class="control-label col-sm-3">Kota/Kabupaten:</label>
+                <label class="control-label col-sm-3 bg-info text-dark">Kota/Kabupaten:</label>
                 <div class="col-sm-9">
                   <select class="form-control" name="" id="kota">
                     <option></option>
@@ -51,7 +52,7 @@
                 </div>
               </div>
               <div class="input-group">
-                <label class="control-label col-sm-3">Kecamatan:</label>
+                <label class="control-label col-sm-3 bg-info text-dark">Kecamatan:</label>
                 <div class="col-sm-9">
                   <select class="form-control" name="" id="kecamatan">
                     <option></option>
@@ -64,8 +65,8 @@
       </div>
     </div>
   </div>
-  <footer class="bg-dark text-white text-center pb-3 fixed-bottom">
-    <p>created with Love by <a href="" class="fw-bold text-white">Ahmad Fikri Husaini</a></p>
+  <footer class="bg-info text-dark text-center pb-3 fixed-bottom">
+
   </footer>
 </body>
 
